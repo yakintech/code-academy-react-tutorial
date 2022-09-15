@@ -1,11 +1,7 @@
 import React from 'react'
 
-function ProductList({ products, deleteProduct }) {
+function ProductList({ products, deleteProduct, updateForm }) {
 
-
-    const updateForm = () => {
-        
-    }
 
     return (<>
         <table>

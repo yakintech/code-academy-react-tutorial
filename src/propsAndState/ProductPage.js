@@ -7,6 +7,11 @@ import ProductList from './ProductList';
 function ProductPage() {
 
     const [products, setproducts] = useState(productList);
+    const [updateProductItem, setupdateProductItem] = useState({
+        name:'',
+        price:0,
+        stock:0
+    })
 
 
     const deleteProduct = (id) => {
@@ -23,10 +28,31 @@ function ProductPage() {
 
     }
 
+    const updateProductFromList = (item) => {
+
+        let product = products.find(q => q.id == item.id);
+        product.name = item.name;
+        product.unitPrice = item.unitPrice;
+        product.unitsInStock = item.unitsInStock;
+
+        setproducts([...products])
+
+    }
+
+    const updateForm = (item) => {
+
+        setupdateProductItem({
+            id: item.id,
+            name:item.name,
+            price:item.unitPrice,
+            stock: item.unitsInStock
+        })
+    }
+
     return (<>
         <ProductHeader products={products} />
-        <AddProduct add={add} />
-        <ProductList products={products} deleteProduct={deleteProduct} />
+        <AddProduct add={add} updateProductItem={updateProductItem} updateProductFromList={updateProductFromList} />
+        <ProductList products={products} deleteProduct={deleteProduct} updateForm={updateForm}  />
     </>
     )
 }
