@@ -1,4 +1,5 @@
 
+import ProductPage from "./propsAndState/ProductPage";
 import StateInputValue from "./stateSample/StateInputValue";
 import StateSample4 from "./stateSample/StateSample4";
 
@@ -9,8 +10,7 @@ function App() {
 
   return <>
 
-    <StateInputValue />
-
+    <ProductPage />
   </>
 
 }
