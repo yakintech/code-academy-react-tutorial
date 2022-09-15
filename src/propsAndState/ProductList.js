@@ -2,6 +2,11 @@ import React from 'react'
 
 function ProductList({ products, deleteProduct }) {
 
+
+    const updateForm = () => {
+        
+    }
+
     return (<>
         <table>
             <thead>
@@ -19,7 +24,7 @@ function ProductList({ products, deleteProduct }) {
 
                        return <tr>
                             <td>{item.id}</td>
-                            <td>{item.name}</td>
+                            <td style={{cursor:'pointer'}} onClick={() => updateForm(item)}>{item.name}</td>
                             <td>{item.unitPrice}</td>
                             <td>{item.unitsInStock}</td>
                             <td onClick={() => deleteProduct(item.id)} style={{cursor:'pointer', color:'tomato'}}>Delete</td>

@@ -41,7 +41,10 @@ function AddProduct(props) {
             </div>
             <div>
                 <button onClick={() => addProduct()}>Add</button>
+                <button>Update</button>
+
             </div>
+      
         </div>
     </>
     )
