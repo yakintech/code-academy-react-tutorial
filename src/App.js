@@ -33,7 +33,7 @@ function App() {
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/posts" element={<Posts />} />
-      <Route path="/posts/:id" element={<PostDetail />} />
+      <Route path="/posts/:postId" element={<PostDetail />} />
       <Route path="/about" element={<AboutPage />} />
 
       <Route path="*" element={<NotFound />} />

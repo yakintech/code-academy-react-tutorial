@@ -6,11 +6,12 @@ function PostDetail() {
 
     const [detail, setdetail] = useState({});
 
-    let { id } = useParams();
+    let { postId } = useParams();
+    
 
     useEffect(() => {
 
-        axios.get('https://jsonplaceholder.typicode.com/posts/' + id)
+        axios.get('https://jsonplaceholder.typicode.com/posts/' + postId)
             .then(res => {
                 setdetail(res.data);
             })
