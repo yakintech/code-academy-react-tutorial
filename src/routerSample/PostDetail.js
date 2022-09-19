@@ -1,12 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router';
+import { useLocation, useParams } from 'react-router';
 
 function PostDetail() {
 
     const [detail, setdetail] = useState({});
-
     let { postId } = useParams();
+
     
 
     useEffect(() => {

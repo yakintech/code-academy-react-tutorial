@@ -2,6 +2,9 @@ import { useState } from "react";
 import { Route, Routes } from "react-router";
 import { Link } from "react-router-dom";
 import ToDoPageWithAxios from "./axiosSample/ToDoPageWithAxios";
+import { FavoritesProvider } from "./contextSample/FavoritesContext";
+import FavoritesPage from "./contextSample/FavoritesPage";
+import ProductList from "./contextSample/ProductList";
 
 import ParentComponent from "./memoSample/ParentComponent";
 import AboutPage from "./routerSample/AboutPage";
@@ -18,30 +21,39 @@ function App() {
 
   return <>
 
-    <nav>
+    <FavoritesProvider>
+      <nav>
 
-      <ul>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/about'>About</Link></li>
-        <li><Link to='/contact'>Contact</Link></li>
-        <li><Link to='/posts'>Posts</Link></li>
-      </ul>
-    </nav>
+        <ul>
+          <li><Link to='/'>Home</Link></li>
+          <li><Link to='/about'>About</Link></li>
+          <li><Link to='/contact'>Contact</Link></li>
+          <li><Link to='/posts'>Posts</Link></li>
+          <li><Link to='/favorites'>Favorites</Link></li>
+          <li><Link to='/products'>Products</Link></li>
 
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/contact" element={<ContactPage />} />
-      <Route path="/about" element={<AboutPage />} />
-      <Route path="/posts" element={<Posts />} />
-      <Route path="/posts/:postId" element={<PostDetail />} />
-      <Route path="/about" element={<AboutPage />} />
+        </ul>
+      </nav>
 
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/favorites" element={<FavoritesPage />}></Route>
+        <Route path="/products" element={<ProductList />}></Route>
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/posts" element={<Posts />} />
+        <Route path="/posts/:postId" element={<PostDetail />} />
+        <Route path="/about" element={<AboutPage />} />
 
-    <footer>
-      <h1>Site Footer</h1>
-    </footer>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+
+      <footer>
+        <h1>Site Footer</h1>
+      </footer>
+
+
+    </FavoritesProvider>
 
   </>
 
