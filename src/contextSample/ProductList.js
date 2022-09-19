@@ -21,6 +21,7 @@ function ProductList() {
 
     const addToFavorites = (item) => {
 
+        //favoriteProduct control
         let favoriteProduct = favorites.find(q => q.id == item.id);
 
         if(!favoriteProduct){

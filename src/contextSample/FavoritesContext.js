@@ -5,7 +5,7 @@ export const favoritesContext = createContext(null);
 export const FavoritesProvider = ({children}) => {
 
     const [favorites, setfavorites] = useState([]);
-
+    
 
     //"public" values
     const values = {
