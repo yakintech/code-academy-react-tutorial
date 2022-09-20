@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Route, Routes } from "react-router";
 import { Link } from "react-router-dom";
 import ToDoPageWithAxios from "./axiosSample/ToDoPageWithAxios";
@@ -13,7 +13,8 @@ import HomePage from "./routerSample/HomePage";
 import NotFound from "./routerSample/NotFound";
 import PostDetail from "./routerSample/PostDetail";
 import Posts from "./routerSample/Posts";
-
+import ReactFormSample from "./formikSample/ReactFormSample";
+import FormikSample from "./formikSample/FormikSample";
 
 //PARENT COMPONENT!!
 function App() {
@@ -22,6 +23,7 @@ function App() {
   return <>
 
     <FavoritesProvider>
+
       <nav>
 
         <ul>
@@ -31,6 +33,8 @@ function App() {
           <li><Link to='/posts'>Posts</Link></li>
           <li><Link to='/favorites'>Favorites</Link></li>
           <li><Link to='/products'>Products</Link></li>
+          <li><Link to='/formiksample'>Formik Sample</Link></li>
+
 
         </ul>
       </nav>
@@ -44,6 +48,7 @@ function App() {
         <Route path="/posts" element={<Posts />} />
         <Route path="/posts/:postId" element={<PostDetail />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/formikSample" element={<FormikSample/>} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
