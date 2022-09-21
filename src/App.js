@@ -5,7 +5,6 @@ import ToDoPageWithAxios from "./axiosSample/ToDoPageWithAxios";
 import { FavoritesProvider } from "./contextSample/FavoritesContext";
 import FavoritesPage from "./contextSample/FavoritesPage";
 import ProductList from "./contextSample/ProductList";
-
 import ParentComponent from "./memoSample/ParentComponent";
 import AboutPage from "./routerSample/AboutPage";
 import ContactPage from "./routerSample/ContactPage";
@@ -15,7 +14,7 @@ import PostDetail from "./routerSample/PostDetail";
 import Posts from "./routerSample/Posts";
 import ReactFormSample from "./formikSample/ReactFormSample";
 import FormikSample from "./formikSample/FormikSample";
-import SupplierNetworkSample from "./networkSample/SupplierNetworkSample";
+import SupplierTable from "./networkSample/components/SupplierTable";
 
 //PARENT COMPONENT!!
 function App() {
@@ -23,6 +22,8 @@ function App() {
 
   return <>
 
+    <SupplierTable />
+    {/* 
     <FavoritesProvider>
 
       <nav>
@@ -35,8 +36,6 @@ function App() {
           <li><Link to='/favorites'>Favorites</Link></li>
           <li><Link to='/products'>Products</Link></li>
           <li><Link to='/formiksample'>Formik Sample</Link></li>
-          <li><Link to='/supplierNetworkSample'>SupplierNetworkSample</Link></li>
-
 
         </ul>
       </nav>
@@ -51,8 +50,6 @@ function App() {
         <Route path="/posts/:postId" element={<PostDetail />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/formikSample" element={<FormikSample/>} />
-        <Route path="/supplierNetworkSample" element={<SupplierNetworkSample/>} />
-
         <Route path="*" element={<NotFound />} />
       </Routes>
 
@@ -61,7 +58,7 @@ function App() {
       </footer>
 
 
-    </FavoritesProvider>
+    </FavoritesProvider> */}
 
   </>
 
