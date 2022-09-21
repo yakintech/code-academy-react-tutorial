@@ -15,6 +15,7 @@ import PostDetail from "./routerSample/PostDetail";
 import Posts from "./routerSample/Posts";
 import ReactFormSample from "./formikSample/ReactFormSample";
 import FormikSample from "./formikSample/FormikSample";
+import SupplierNetworkSample from "./networkSample/SupplierNetworkSample";
 
 //PARENT COMPONENT!!
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <li><Link to='/favorites'>Favorites</Link></li>
           <li><Link to='/products'>Products</Link></li>
           <li><Link to='/formiksample'>Formik Sample</Link></li>
+          <li><Link to='/supplierNetworkSample'>SupplierNetworkSample</Link></li>
 
 
         </ul>
@@ -49,6 +51,7 @@ function App() {
         <Route path="/posts/:postId" element={<PostDetail />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/formikSample" element={<FormikSample/>} />
+        <Route path="/supplierNetworkSample" element={<SupplierNetworkSample/>} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
