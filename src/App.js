@@ -17,10 +17,11 @@ import FormikSample from "./formikSample/FormikSample";
 import SupplierTable from "./networkSample/components/SupplierTable";
 import AdminHome from "./ChildrenProvider/AdminHome";
 import { AuthManager } from "./ChildrenProvider/AuthManager";
+import { routeConfig } from "./routerSample/routeConfig";
 
 //PARENT COMPONENT!!
 function App(props) {
-  
+
   return <>
 
 
@@ -49,7 +50,12 @@ function App(props) {
       </nav>
 
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        {
+          routeConfig.map((item,key) => {
+            return <Route key={key} path={item.path} element={<AuthManager>{item.element}</AuthManager>} />
+          })
+        }
+        {/* <Route path="/" element={<HomePage />} />
         <Route path="/favorites" element={<FavoritesPage />}></Route>
         <Route path="/products" element={<ProductList />}></Route>
         <Route path="/contact" element={<ContactPage />} />
@@ -58,8 +64,8 @@ function App(props) {
         <Route path="/posts/:postId" element={<PostDetail />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/formikSample" element={<FormikSample />} />
-        <Route path="/admin" element={<AuthManager><AdminHome /></AuthManager>} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/admin" element={<AdminHome />} />
+        <Route path="*" element={<NotFound />} /> */}
       </Routes>
 
       <footer>
