@@ -15,15 +15,22 @@ import Posts from "./routerSample/Posts";
 import ReactFormSample from "./formikSample/ReactFormSample";
 import FormikSample from "./formikSample/FormikSample";
 import SupplierTable from "./networkSample/components/SupplierTable";
+import AdminHome from "./ChildrenProvider/AdminHome";
+import { AuthManager } from "./ChildrenProvider/AuthManager";
 
 //PARENT COMPONENT!!
-function App() {
-
-
+function App(props) {
+  
   return <>
 
-    <SupplierTable />
-    {/* 
+
+    {/* <AuthManager>
+      <AdminHome />
+    </AuthManager> */}
+
+
+    {/* <SupplierTable /> */}
+
     <FavoritesProvider>
 
       <nav>
@@ -36,6 +43,7 @@ function App() {
           <li><Link to='/favorites'>Favorites</Link></li>
           <li><Link to='/products'>Products</Link></li>
           <li><Link to='/formiksample'>Formik Sample</Link></li>
+          <li><Link to='/admin'>Admin PAGE</Link></li>
 
         </ul>
       </nav>
@@ -49,7 +57,8 @@ function App() {
         <Route path="/posts" element={<Posts />} />
         <Route path="/posts/:postId" element={<PostDetail />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/formikSample" element={<FormikSample/>} />
+        <Route path="/formikSample" element={<FormikSample />} />
+        <Route path="/admin" element={<AuthManager><AdminHome /></AuthManager>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 
@@ -58,7 +67,7 @@ function App() {
       </footer>
 
 
-    </FavoritesProvider> */}
+    </FavoritesProvider>
 
   </>
 
